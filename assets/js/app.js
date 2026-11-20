@@ -720,25 +720,57 @@
       setTimeout(function () { done({ ok: true, id: 'PREVIEW', preview: true }); }, 500);
       return;
     }
-    var ctrl = typeof AbortController === 'function' ? new AbortController() : null;
-    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 25000);
-    fetch(C.endpoint, {
-      method: 'POST',
-      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-      body: JSON.stringify(body),
-      signal: ctrl ? ctrl.signal : undefined
-    }).then(function (r) { return r.json(); })
-      .then(function (res) {
+    /* 很多人同時送出時：收件程式一次寫一筆，排不到會回 BUSY；Google 同時執行太多會回錯誤頁（不是 JSON）。
+       這兩種都是「還沒寫進去」，自動等 2–5 秒再送，最多再試 2 次。同一個證件號碼重送會被擋下，不會重複報名。 */
+    var MAX_TRY = 3;
+    var attempt = 0;
+    var hint = setTimeout(function () { btn.textContent = '排隊送出中，請不要關閉頁面…'; }, 6000);
+    var finish = function (res) { clearTimeout(hint); done(res); };
+    var send = function () {
+      attempt++;
+      var ctrl = typeof AbortController === 'function' ? new AbortController() : null;
+      var timedOut = false;
+      var timer = setTimeout(function () { timedOut = true; if (ctrl) ctrl.abort(); }, 60000);
+      var retry = function () {
         clearTimeout(timer);
-        if (!res.ok && res.code === 'DUPLICATE') res.message = '這個證件號碼已經報名過了。如需修改資料，請洽' + C.contact + '。';
+        if (attempt >= MAX_TRY) return false;
+        clearTimeout(hint);
+        btn.textContent = '排隊中，自動重新送出（第 ' + (attempt + 1) + ' 次）…';
+        setTimeout(send, 2000 + Math.random() * 3000);
+        return true;
+      };
+      fetch(C.endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(body),
+        signal: ctrl ? ctrl.signal : undefined
+      }).then(function (r) {
+        return r.text().then(function (t) {
+          try { return JSON.parse(t); } catch (e) { return { ok: false, code: 'NOT_JSON' }; }
+        });
+      }).then(function (res) {
+        clearTimeout(timer);
+        if (!res.ok && (res.code === 'BUSY' || res.code === 'NOT_JSON') && retry()) return;
+        if (!res.ok && res.code === 'NOT_JSON') res.message = '目前同時報名的人比較多，資料沒有送出。請等 10 秒再按一次「確認送出」。';
+        if (!res.ok && res.code === 'DUPLICATE') {
+          res.message = attempt > 1
+            ? '這個證件號碼已經報名成功了（剛剛排隊時已經送進去），不用再報一次。確認信會寄到你填的 Email；沒收到請洽' + C.contact + '。'
+            : '這個證件號碼已經報名過了，不用再報一次。如需修改資料，請洽' + C.contact + '。';
+        }
         if (!res.ok && res.code === 'CLOSED') res.message = '團報已在 ' + (CLOSE_AT ? fmtTW(CLOSE_AT) : '截止時間') + ' 截止收件，這筆資料沒有送出。';
         if (!res.ok && res.code === 'NOT_OPEN') res.message = '團報還沒開放，' + (OPEN_AT ? fmtTW(OPEN_AT) : '開放時間') + ' 開始收件。';
-        done(res);
-      })
-      .catch(function () {
+        finish(res);
+      }).catch(function () {
         clearTimeout(timer);
-        done({ ok: false, message: '網路連線失敗，資料沒有送出。請確認網路後再按一次「檢查資料並送出」；若一直失敗，請截圖並聯繫' + C.contact + '。' });
+        if (timedOut) {
+          finish({ ok: false, message: '等太久沒有回應，資料可能已經送到。請先看 Email 有沒有收到確認信；沒有的話再按一次「確認送出」（重複送出會被擋下，不會報名兩次）。' });
+          return;
+        }
+        if (retry()) return;
+        finish({ ok: false, message: '網路連線失敗，資料沒有送出。請確認網路後再按一次「檢查資料並送出」；若一直失敗，請截圖並聯繫' + C.contact + '。' });
       });
+    };
+    send();
   }
 
   /* ---------- 報名完成：頁面上的完成區＋跳出視窗（請學員截圖、傳給官方 LINE 小編） */
@@ -1037,7 +1069,8 @@
     renderPeriod();
     setInterval(renderPeriod, 30000);
     setInterval(renderCountdown, 1000);
-    loadStats();
+    renderMeter(null);
+    setTimeout(loadStats, Math.random() * 1200);   // 開放那一刻很多人同時打開網頁：錯開一點再問人數
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
