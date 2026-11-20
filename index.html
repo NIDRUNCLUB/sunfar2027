@@ -1,0 +1,789 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- ARTIFACT:HEAD-START -->
+<title>NID 順發港都公益路跑團報</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&family=JetBrains+Mono:wght@500;700&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+<!-- ARTIFACT:HEAD-END -->
+<meta name="description" content="NID RUN CLUB 2027 RUN FOR FUTURE 第五屆順發x港都公益路跑團體報名：組別費用、紀念品、尺寸表與線上報名。">
+<meta name="theme-color" content="#0a0a0a">
+<meta property="og:type" content="website">
+<meta property="og:title" content="NID RUN CLUB｜2027 順發x港都公益路跑團報">
+<meta property="og:description" content="2027.04.18 高雄港灣文化廊帶（駁二x高流）｜21K・10K・5K・5K健走・5K健走兒童｜NID 學員與親友團報，線上填表＋匯款後五碼即完成報名。">
+<meta property="og:url" content="https://nidrunclub.github.io/sunfar2027/">
+<meta property="og:image" content="https://nidrunclub.github.io/sunfar2027/assets/img/og.jpg">
+<link rel="icon" type="image/png" href="assets/img/favicon.png?v=2">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png?v=2">
+</head>
+<body>
+<!-- ARTIFACT:BODY-START -->
+<header class="topbar">
+  <div class="wrap topbar__inner">
+    <a class="brand" href="#hero" aria-label="回到頁首">
+      <img src="assets/img/nidrc-logo.png" alt="NID RUN CLUB" width="517" height="120">
+      <span class="brand__x">× RUN FOR FUTURE 2027</span>
+    </a>
+    <nav class="topnav" aria-label="頁面導覽">
+      <a href="#perks">好禮福利</a>
+      <a href="#categories">組別費用</a>
+      <a href="#route">路線圖</a>
+      <a href="#kit">參賽禮</a>
+      <a href="#info">賽事資訊</a>
+      <a href="#pay">匯款資訊</a>
+      <a href="#faq">注意事項</a>
+    </nav>
+    <button class="btn btn--sun btn--sm js-open-terms" type="button">我要報名</button>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="confetti" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="wrap hero__grid">
+      <div class="hero__copy">
+        <p class="hero__stickers"><span class="sticker">高雄團首場團報！</span><span class="sticker sticker--o">21K・10K 送藍牙耳機或喇叭</span></p>
+        <p class="eyebrow">NID RUN CLUB 團體報名</p>
+        <h1 class="hero__title">
+          <span class="lat">RUN FOR FUTURE</span>
+          第五屆順發×港都公益路跑
+          <span class="tag">高雄班第一場團報，跟 <b>NID</b> 一起港邊開跑！</span>
+        </h1>
+        <ul class="hero__facts">
+          <li><b class="lat num">04.18</b><span>2027 星期日</span></li>
+          <li><b class="lat num">06:15</b><span>21K 鳴槍起跑</span></li>
+          <li><b>高雄港灣文化廊帶</b><span>駁二×高流</span></li>
+          <li><b>5 個組別</b><span>21K・10K・5K・健走・兒童</span></li>
+        </ul>
+        <div class="hero__cta">
+          <button class="btn btn--sun btn--lg js-open-terms" type="button">我要報名 <span class="arrow" aria-hidden="true">→</span></button>
+          <a class="btn btn--ghost btn--lg" href="#categories">看組別與費用</a>
+        </div>
+        <div class="period" id="period">
+          <div class="period__top">
+            <span class="period__label">團報時間</span>
+            <b class="period__dates" id="periodText">11/23（一）00:00 – 11/28（六）23:59</b>
+            <span class="period__status" id="phaseText" data-phase="open">報名中</span>
+          </div>
+          <div class="countdown" id="countdown" hidden>
+            <span class="countdown__label" id="cdLabel">距離開放</span>
+            <span class="countdown__unit"><b id="cdD">0</b><small>天</small></span>
+            <span class="countdown__unit"><b id="cdH">00</b><small>時</small></span>
+            <span class="countdown__unit"><b id="cdM">00</b><small>分</small></span>
+            <span class="countdown__unit"><b id="cdS">00</b><small>秒</small></span>
+          </div>
+        </div>
+        <p class="hero__meta"><span id="statsText" class="live" hidden></span></p>
+      </div>
+      <div class="hero__card" aria-hidden="true">
+        <div class="hero__card-head"><span>TEAM ENTRY</span><img src="assets/img/nid-logo.png" alt="" width="419" height="240"></div>
+        <p class="hero__card-top">2027.04.18 SUN・KAOHSIUNG</p>
+        <p class="hero__card-no"><span>第</span><b>5</b><span>屆</span></p>
+        <p class="hero__card-name"><span>RUN FOR</span><span class="hi">FUTURE</span></p>
+        <p class="hero__card-sub">順發×港都公益路跑</p>
+        <ul class="hero__card-dist"><li class="k21">21K</li><li class="k10">10K</li><li class="k5">5K</li><li class="k5">5K 健走</li><li class="k5">5K 健走兒童</li></ul>
+        <p class="hero__card-foot">公益路跑・結餘款捐助高雄兒少機構</p>
+      </div>
+    </div>
+    <svg class="hero__waves" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path class="w1" d="M0,58 C160,22 320,18 480,44 C640,70 800,92 960,74 C1120,56 1280,30 1440,40 L1440,120 L0,120 Z"/>
+      <path class="w2" d="M0,82 C200,58 380,62 560,78 C740,94 900,102 1080,88 C1240,76 1360,68 1440,72 L1440,120 L0,120 Z"/>
+      <path class="w3" d="M0,96 C220,80 420,84 620,94 C820,104 1020,108 1220,98 C1330,93 1400,90 1440,92 L1440,120 L0,120 Z"/>
+    </svg>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap" aria-hidden="true">
+   <div class="marquee">
+    <div class="marquee__track">
+      <span>高雄團首場團報</span><span>RUN FOR FUTURE</span><span>04.18 港邊開跑</span><span>滿 50 人解鎖 NID 帳篷</span><span>21K・10K 好禮二選一</span><span>團報 11/23 – 11/28</span>
+      <span>高雄團首場團報</span><span>RUN FOR FUTURE</span><span>04.18 港邊開跑</span><span>滿 50 人解鎖 NID 帳篷</span><span>21K・10K 好禮二選一</span><span>團報 11/23 – 11/28</span>
+    </div>
+   </div>
+  </div>
+
+  <!-- PERKS: gift + team tent -->
+  <section class="band band--perks" id="perks">
+    <div class="wrap">
+      <div class="band__head">
+        <p class="band__kicker">Perks</p>
+        <h2 class="band__title">報名好禮＋團報福利</h2>
+        <p class="band__lead">21K、10K 報名就送大會<b>好禮二選一</b>；NID 團報<b>每滿 50 人就多 1 頂帳篷</b>，滿 50 人還會在帳篷區準備團報福利。揪班上同學一起報，人越多越熱鬧！</p>
+      </div>
+
+      <div class="perks">
+        <article class="gift-feature">
+          <p class="gift-feature__tag">21K・10K 報名就送</p>
+          <h3 class="gift-feature__title">大會好禮二選一</h3>
+          <div class="gift-feature__grid">
+            <div class="gift-card gift-card--hot">
+              <span class="gift-card__badge">早鳥限量</span>
+              <figure class="gift-card__photo"><img src="https://lohasnet.tw/Sunfar2027/assets/images/earB.jpg?08121" alt="AZOMA Z1 耳夾式藍牙耳機（大會好禮）" width="1000" height="1000" loading="lazy" onerror="this.parentNode.hidden=true"></figure>
+              <h4>AZOMA Z1<br>耳夾式藍牙耳機</h4>
+              <p class="gift-card__price"><small>市價</small> $2,188</p>
+              <p class="gift-card__note">黑色・OWS 開放式耳夾，跑步不塞耳。大會早鳥限量 6,000 名，送完改送藍牙喇叭。</p>
+            </div>
+            <div class="gift-card">
+              <figure class="gift-card__photo"><img src="https://lohasnet.tw/Sunfar2027/assets/images/gift1.jpg?08121" alt="e-Power BT-300 一體式藍牙喇叭（大會好禮）" width="820" height="820" loading="lazy" onerror="this.parentNode.hidden=true"></figure>
+              <h4>e-Power BT-300<br>一體式藍牙喇叭</h4>
+              <p class="gift-card__price"><small>市價</small> $899</p>
+              <p class="gift-card__note">6W 一體式藍牙喇叭。</p>
+            </div>
+          </div>
+          <div class="gift-feature__more">
+            <p>每個人報名都有</p>
+            <ul><li>紀念T恤</li><li>完賽獎牌</li><li>號碼布</li><li>礦泉水</li><li>21K・10K 完賽餐盒</li></ul>
+          </div>
+          <p class="gift-feature__foot">好禮在報名表選 21K 或 10K 時挑一個。好禮跟紀念T恤、號碼布一起在賽前郵寄。<a class="js-official" href="https://lohasnet.tw/Sunfar2027/" target="_blank" rel="noopener">看大會好禮照片 ↗</a></p>
+        </article>
+
+        <article class="team-meter" id="teamMeter">
+          <p class="team-meter__tag">NID 團報進度</p>
+          <div class="team-meter__count"><b id="tmCount">—</b><span>人已報名</span></div>
+          <p class="team-meter__msg" id="tmMsg">滿 50 人解鎖 NID 帳篷＋團報福利！</p>
+          <div class="meter" id="tmMeter">
+            <div class="meter__track"><div class="meter__fill" id="tmFill"></div></div>
+            <ol class="meter__marks" id="tmMarks"><!-- rendered --></ol>
+          </div>
+          <ul class="perk-list">
+            <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M5 41 24 12l19 29"/><path d="M3 41h42"/><path d="M24 25l-5.5 16"/><path d="M24 25l5.5 16"/><path d="M24 12V4l8 3.5-8 3.5"/></svg><div><b>NID 帳篷休息區</b><span>每滿 50 人就有 1 頂帳篷（大會團體休息區），比賽當天的 NID 基地。</span></div></li>
+            <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M16 26V11a3 3 0 0 1 6 0v12"/><path d="M22 21V8a3 3 0 0 1 6 0v13"/><path d="M28 22V11a3 3 0 0 1 6 0v15a14 14 0 0 1-14 14h-1a12 12 0 0 1-10.4-6L6 27.5a3 3 0 0 1 5.2-3l3.8 5.5"/></svg><div><b>賽後按摩<em>規劃中</em></b><span>滿 50 人，帳篷區規劃安排按摩，讓跑完的腿放鬆一下。</span></div></li>
+            <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M20 4h8v6l3 5v26a3 3 0 0 1-3 3h-8a3 3 0 0 1-3-3V15l3-5Z"/><path d="M17 24h14"/><path d="M17 32h14"/></svg><div><b>團報補給品<em>規劃中</em></b><span>滿 50 人，帳篷區規劃準備補給，跑前跑後都有得吃喝。</span></div></li>
+          </ul>
+          <p class="team-meter__fine">人數每次打開網頁會更新。按摩、補給還在規劃中，確定後會在網站和班級 LINE 群組公布；未滿 50 人就沒有帳篷和福利。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES + FEES -->
+  <section class="band" id="categories">
+    <div class="wrap">
+      <div class="band__head">
+        <p class="band__kicker">Categories & Fees</p>
+        <h2 class="band__title">組別與費用</h2>
+        <p class="band__lead">報名費依大會公告。團報每人另加<b>運費</b>：當期學員和學員的小孩 <b class="num" data-cfg="shipStudent">NT$50</b>、非當期學員 <b class="num" data-cfg="shipGuest">NT$80</b><span data-needs-chip>；21K、10K、5K 另加大會規定的<b>晶片押金 <span class="num" data-cfg="chip">NT$100</span></b>，賽後依大會規定歸還晶片即退還（健走組、兒童組沒有晶片）</span>。</p>
+      </div>
+
+      <div class="dist-groups" id="distGroups"><!-- rendered from config.js --></div>
+
+      <h3 class="sub-title">團報應匯金額一覽</h3>
+      <div class="formula" aria-label="應匯金額計算方式">
+        <div class="formula__item"><b>報名費</b><span>依組別</span></div>
+        <span class="formula__op" aria-hidden="true" data-needs-chip>+</span>
+        <div class="formula__item" data-needs-chip><b class="num" data-cfg="chipShort">晶片押金 100</b><span>21K・10K・5K（可退）</span></div>
+        <span class="formula__op" aria-hidden="true">+</span>
+        <div class="formula__item"><b class="num" data-cfg="shipShort">運費 50 / 80</b><span>當期學員（含小孩）/ 非當期學員</span></div>
+        <span class="formula__op" aria-hidden="true">+</span>
+        <div class="formula__item"><b>旅平險</b><span>選填 <span class="num" data-cfg="insPrice">NT$40</span></span></div>
+        <span class="formula__op" aria-hidden="true">=</span>
+        <div class="formula__item formula__item--sum"><b>應匯金額</b><span>一人一筆匯款</span></div>
+      </div>
+      <div class="table-scroll">
+        <table class="fees" id="feeTable">
+          <thead>
+            <tr><th scope="col">組別</th><th scope="col">報名費</th><th scope="col">晶片押金</th><th scope="col">當期學員應匯</th><th scope="col">非當期學員應匯</th></tr>
+          </thead>
+          <tbody><!-- rendered from config.js --></tbody>
+        </table>
+      </div>
+      <p class="fine">金額不含加購的一日旅平險。大會報名平台的行政處理費、整團郵寄物資的郵資由 NID 處理，不另外收。</p>
+
+      <h3 class="sub-title">比賽日流程</h3>
+      <ol class="timeline">
+        <li><time>05:00</time><span>集合・開放衣物寄放（5 公里各組不提供寄物）</span></li>
+        <li><time>05:30</time><span>開幕式（來賓致詞、路線及規則說明）</span></li>
+        <li><time>05:50</time><span>大會暖身操</span></li>
+        <li class="d21"><time>06:15</time><span>21 公里組鳴槍・限時 3 小時 30 分</span></li>
+        <li class="d10"><time>06:25</time><span>10 公里組鳴槍・限時 2 小時 30 分</span></li>
+        <li class="d5"><time>06:42</time><span>5 公里組、5 公里健走組、5 公里健走兒童組鳴槍</span></li>
+        <li><time>07:30</time><span>抽獎活動（完賽者）</span></li>
+        <li><time>08:00</time><span>各組頒獎</span></li>
+        <li><time>10:00</time><span>活動結束</span></li>
+      </ol>
+      <p class="fine">實際流程以大會現場公告為準。</p>
+    </div>
+  </section>
+
+  <!-- ROUTE -->
+  <section class="band band--alt" id="route">
+    <div class="wrap">
+      <div class="band__head">
+        <p class="band__kicker">Course</p>
+        <h2 class="band__title">比賽路線</h2>
+        <p class="band__lead">起終點都在<b>高雄港灣文化廊帶（駁二×高流）</b>，沿著港邊跑。地圖是大會公布在 Ride with GPS 的路線，可以放大、拖曳看細節；大會的路線說明還在準備中，以<a class="js-official" href="https://lohasnet.tw/Sunfar2027/" target="_blank" rel="noopener">大會官網</a>為準。</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="選擇路線">
+        <button class="tab" type="button" role="tab" id="tab-r21" aria-controls="panel-r21" aria-selected="true"><b>21K</b>21 公里組</button>
+        <button class="tab tab--10" type="button" role="tab" id="tab-r10" aria-controls="panel-r10" aria-selected="false" tabindex="-1"><b>10K</b>10 公里組</button>
+        <button class="tab tab--5" type="button" role="tab" id="tab-r5" aria-controls="panel-r5" aria-selected="false" tabindex="-1"><b>5K</b>5 公里・健走・兒童</button>
+      </div>
+      <div class="route-panel" id="panel-r21" role="tabpanel" aria-labelledby="tab-r21">
+        <div class="route-map"><iframe title="21 公里組路線圖（Ride with GPS）" data-src="https://ridewithgps.com/embeds?type=route&amp;id=53374838&amp;sampleGraph=true" loading="lazy"></iframe></div>
+        <div class="route-facts">
+          <dl><dt>距離</dt><dd class="num">21.3 公里</dd><dt>累積爬升</dt><dd class="num">約 156 公尺</dd><dt>起跑</dt><dd class="num">06:15</dd><dt>限時</dt><dd>3 小時 30 分</dd></dl>
+          <a class="btn btn--line btn--sm" href="https://ridewithgps.com/routes/53374838" target="_blank" rel="noopener">在 Ride with GPS 開啟 ↗</a>
+        </div>
+      </div>
+      <div class="route-panel" id="panel-r10" role="tabpanel" aria-labelledby="tab-r10" hidden>
+        <div class="route-map"><iframe title="10 公里組路線圖（Ride with GPS）" data-src="https://ridewithgps.com/embeds?type=route&amp;id=53374870&amp;sampleGraph=true" loading="lazy"></iframe></div>
+        <div class="route-facts">
+          <dl><dt>距離</dt><dd class="num">10.05 公里</dd><dt>累積爬升</dt><dd class="num">約 63 公尺</dd><dt>起跑</dt><dd class="num">06:25</dd><dt>限時</dt><dd>2 小時 30 分</dd></dl>
+          <a class="btn btn--line btn--sm" href="https://ridewithgps.com/routes/53374870" target="_blank" rel="noopener">在 Ride with GPS 開啟 ↗</a>
+        </div>
+      </div>
+      <div class="route-panel" id="panel-r5" role="tabpanel" aria-labelledby="tab-r5" hidden>
+        <div class="route-map"><iframe title="5 公里組路線圖（Ride with GPS）" data-src="https://ridewithgps.com/embeds?type=route&amp;id=53374899&amp;sampleGraph=true" loading="lazy"></iframe></div>
+        <div class="route-facts">
+          <dl><dt>距離</dt><dd class="num">約 4.6 公里</dd><dt>累積爬升</dt><dd class="num">約 35 公尺</dd><dt>起跑</dt><dd class="num">06:42</dd><dt>限時</dt><dd>5 公里組 1 小時 30 分；健走、兒童 3 小時 30 分</dd></dl>
+          <p class="fine">5 公里組、5 公里健走組、5 公里健走兒童組走同一條路線。</p>
+          <a class="btn btn--line btn--sm" href="https://ridewithgps.com/routes/53374899" target="_blank" rel="noopener">在 Ride with GPS 開啟 ↗</a>
+        </div>
+      </div>
+      <p class="fine">距離、爬升取自大會在 Ride with GPS 的路線資料，正式路線以大會公告為準。</p>
+    </div>
+  </section>
+
+  <!-- RACE INFO -->
+  <section class="band" id="info">
+    <div class="wrap">
+      <div class="band__head">
+        <p class="band__kicker">Race Info</p>
+        <h2 class="band__title">賽事資訊</h2>
+        <p class="band__lead">起終點在高雄港灣文化廊帶（駁二×高流），路線圖在上方的「<a href="#route">比賽路線</a>」。</p>
+      </div>
+      <div class="info-grid">
+        <article class="info-card">
+          <h3>年齡規定</h3>
+          <ul>
+            <li><b>21 公里組</b>：比賽當天須滿 16 歲（2011/4/18 以前出生）。</li>
+            <li><b>10 公里組、5 公里組</b>：不限年齡。</li>
+            <li><b>5 公里健走組</b>：8 歲（含）以上；<b>5 公里健走兒童組</b>：未滿 8 歲。</li>
+            <li><b>12 歲（含）以下</b>要有 20 歲以上的大人陪同參加；陪同的大人也要報名，大會嚴禁沒報名的人陪跑。</li>
+            <li>比賽當天<b>未滿 18 歲</b>：要填保證人（家長或監護人）的姓名與身分證字號。</li>
+          </ul>
+        </article>
+        <article class="info-card">
+          <h3>分組與計時</h3>
+          <div class="table-scroll">
+            <table class="mini">
+              <caption>21 公里組年齡分組</caption>
+              <thead><tr><th scope="col">男子組</th><th scope="col">年齡</th><th scope="col">女子組</th><th scope="col">年齡</th></tr></thead>
+              <tbody>
+                <tr><td>男 A 組</td><td>60 歲以上</td><td>女 A 組</td><td>40 歲以上</td></tr>
+                <tr><td>男 B 組</td><td>40–59 歲</td><td>女 B 組</td><td>39 歲以下</td></tr>
+                <tr><td>男 C 組</td><td>39 歲以下</td><td>—</td><td>—</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>10 公里組、5 公里組分男、女兩組，晶片計時；5 公里健走組、5 公里健走兒童組不分組、沒有晶片。</p>
+        </article>
+        <article class="info-card">
+          <h3>寄物與團體招待</h3>
+          <ul>
+            <li>衣物寄放 05:00 開始，活動結束前取回；5 公里各組（含健走、兒童）<b>不提供寄物</b>。</li>
+            <li>貴重物品請自己保管，遺失大會不負責。</li>
+            <li>團報滿 50 人，大會當天安排 1 處團體休息區；滿 100 人安排 2 處。</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- KIT -->
+  <section class="band band--alt" id="kit">
+    <div class="wrap">
+      <div class="band__head">
+        <p class="band__kicker">Race Kit</p>
+        <h2 class="band__title">參賽禮與完賽禮</h2>
+        <p class="band__lead">大會一律郵寄報到：<b>參賽禮</b>在比賽前 1–2 週整團寄給 NID，收到後再通知大家怎麼拿；<b>完賽禮</b>在終點現場領。比賽當天不開放現場報到。</p>
+      </div>
+
+      <h3 class="kit-head"><span class="kit-head__tag">賽前郵寄</span>參賽禮</h3>
+      <figure class="kit-photo"><img src="https://lohasnet.tw/Sunfar2027/assets/images/gift3.jpg?08121" alt="大會好禮二選一：AZOMA Z1 耳夾式藍牙耳機（市價 2,188）或 e-Power BT-300 一體式藍牙喇叭（市價 899），報名 10K、21K 才有" width="2242" height="882" loading="lazy" onerror="this.parentNode.hidden=true"></figure>
+      <div class="kit-grid kit-grid--text">
+        <article class="kit kit--text">
+          <div class="kit__body"><p class="when">21K・10K 才有</p><h3>好禮二選一</h3><p><b>AZOMA Z1 耳夾式藍牙耳機（黑色）</b>市價 2,188，或 <b>e-Power BT-300 一體式藍牙喇叭</b>市價 899。耳機是大會早鳥限量 6,000 名，送完改送喇叭。</p><div class="who"><span class="chip k21">21K</span><span class="chip k10">10K</span></div></div>
+        </article>
+        <article class="kit kit--text">
+          <div class="kit__body"><p class="when">每個人都有</p><h3>紀念T恤</h3><p>款式大會還沒公布。客製化商品，報名後不能更換尺寸；8、10、12 號是兒童款。<a href="#tee-size">看尺寸表 ↓</a></p><div class="who"><span class="chip k21">21K</span><span class="chip k10">10K</span><span class="chip k5">5K 各組</span></div></div>
+        </article>
+        <article class="kit kit--text">
+          <div class="kit__body"><p class="when">每個人都有</p><h3>號碼布＋計時晶片</h3><p>號碼布附別針；21K、10K、5K 另有計時晶片（押金 100）。晶片、號碼布遺失要付費補發，請收好。</p><div class="who"><span class="chip k21">21K</span><span class="chip k10">10K</span><span class="chip k5">5K 各組</span></div></div>
+        </article>
+      </div>
+
+      <h3 class="kit-head"><span class="kit-head__tag kit-head__tag--o">終點領取</span>完賽禮</h3>
+      <div class="medal-feature">
+        <img src="https://lohasnet.tw/Sunfar2027/assets/images/medal.jpg" alt="完賽獎牌：融入大港橋、高雄流行音樂中心與駁二特區的港都意象" width="878" height="731" loading="lazy" onerror="this.hidden=true">
+        <div class="medal-feature__body">
+          <p class="when">21K・10K・5K 各組完賽</p>
+          <h3>完賽獎牌</h3>
+          <p>融入大港橋、高雄流行音樂中心與駁二特區的港都意象，厚實有重量，跑完港邊收藏一座城市。</p>
+          <ul class="medal-list">
+            <li><b>成績證書</b><span>晶片計時的 21K、10K、5 公里組</span></li>
+            <li><b>礦泉水</b><span>各組都有</span></li>
+            <li><b>餐盒</b><span>21K、10K 完賽</span></li>
+          </ul>
+          <p class="fine">完賽禮若斷貨，大會保有更換的權利。</p>
+        </div>
+      </div>
+
+      <h3 class="kit-head" id="tee-size"><span class="kit-head__tag kit-head__tag--s">挑尺寸</span>紀念T恤尺寸表</h3>
+      <figure class="size-ref">
+        <div class="size-ref__scroll" tabindex="0" aria-label="大會紀念T恤尺寸表，可左右捲動">
+          <table class="size-table">
+            <thead>
+              <tr><th scope="col">尺寸</th><th scope="col">8</th><th scope="col">10</th><th scope="col">12</th><th scope="col">XS</th><th scope="col">S</th><th scope="col">M</th><th scope="col">L</th><th scope="col">XL</th><th scope="col">2L</th><th scope="col">3L</th></tr>
+            </thead>
+                <tbody>
+                  <tr><th scope="row">衣長</th><td>46</td><td>52</td><td>58</td><td>60</td><td>62</td><td>66</td><td>70</td><td>73</td><td>76</td><td>78</td></tr>
+                  <tr><th scope="row">胸寬</th><td>36</td><td>38</td><td>42</td><td>44</td><td>45</td><td>48</td><td>51</td><td>54</td><td>57</td><td>61</td></tr>
+                  <tr><th scope="row">袖長</th><td>16</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td></tr>
+                  <tr><th scope="row">建議身高</th><td>110</td><td>120</td><td>130</td><td>140</td><td>150</td><td>160</td><td>170</td><td>180</td><td>180–190</td><td>180–200</td></tr>
+                  <tr><th scope="row">建議體重</th><td>15–25</td><td>20–30</td><td>25–35</td><td>30–40</td><td>40–50</td><td>45–55</td><td>50–70</td><td>60–80</td><td>80–100</td><td>100–120</td></tr>
+                </tbody>
+          </table>
+        </div>
+        <figcaption>大會尺寸表・8、10、12 號為兒童款・衣長／胸寬／袖長單位 cm、身高 cm、體重 kg・單面平放測量，誤差 5% 屬正常<span class="size-ref__swipe">・左右滑動看完整尺寸</span></figcaption>
+      </figure>
+      <details class="fold fit-report">
+        <summary>大會試穿報告：身高體重跟你差不多的人穿什麼尺寸？</summary>
+        <div class="fold__body">
+          <div class="size-ref__scroll" tabindex="0" aria-label="大會試穿報告，可左右捲動">
+            <table class="size-table size-table--fit">
+              <thead>
+                <tr><th scope="col">試穿者</th><th scope="col">A</th><th scope="col">B</th><th scope="col">C</th><th scope="col">D</th><th scope="col">E</th><th scope="col">F</th><th scope="col">G</th><th scope="col">H</th><th scope="col">I</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">性別</th><td>女</td><td>女</td><td>女</td><td>女</td><td>男</td><td>男</td><td>男</td><td>男</td><td>男</td></tr>
+                <tr><th scope="row">身高</th><td>150</td><td>163</td><td>158</td><td>162</td><td>165</td><td>172</td><td>175</td><td>180</td><td>170</td></tr>
+                <tr><th scope="row">體重</th><td>41</td><td>46</td><td>60</td><td>63</td><td>50</td><td>66</td><td>52</td><td>84</td><td>95</td></tr>
+                <tr><th scope="row">肩寬</th><td>35</td><td>35.5</td><td>40</td><td>38</td><td>40</td><td>40</td><td>42</td><td>49</td><td>42</td></tr>
+                <tr><th scope="row">胸圍</th><td>86</td><td>81.5</td><td>85</td><td>93</td><td>82</td><td>90</td><td>79</td><td>110</td><td>99</td></tr>
+                <tr class="is-size"><th scope="row">穿的尺寸</th><td>XS</td><td>M</td><td>M</td><td>L</td><td>M</td><td>M</td><td>L</td><td>XL</td><td>2L</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="fine">身高、肩寬、胸圍 cm，體重 kg。每個人身形不同，試穿報告僅供參考。</p>
+        </div>
+      </details>
+      <p class="fine">內容與圖片取自大會官網，實際品項以大會公告與實品為準。</p>
+    </div>
+  </section>
+
+  <!-- PAY -->
+  <section class="band" id="pay">
+    <div class="wrap">
+      <div class="band__head">
+        <p class="band__kicker">How to Join</p>
+        <h2 class="band__title">報名流程與匯款資訊</h2>
+      </div>
+      <div class="pay-layout">
+        <ol class="steps">
+          <li><div><b>按「我要報名」，閱讀參賽聲明</b><span>閱讀完，請點同意。</span></div></li>
+          <li><div><b>填寫報名表</b><span>選身分、組別、好禮、T恤尺寸，填參賽者資料。系統會算出你的應匯金額。</span></div></li>
+          <li><div><b>依金額匯款</b><span>一人匯一筆，金額要和報名表上的「應匯金額」一樣。</span></div></li>
+          <li><div><b>填匯款帳號後五碼並送出</b><span>填的是「你匯出款項的帳號」最後 5 碼。</span></div></li>
+        </ol>
+        <div class="bank" id="bankCard">
+          <div class="bank__top"><span class="bank__label">Transfer</span><img src="assets/img/nidrc-logo.png" alt="" width="517" height="120"></div>
+          <dl>
+            <dt>銀行</dt><dd><span><span data-bank="bankCode">822</span> <span data-bank="bankName">中國信託商業銀行</span></span><button class="copy js-copy" type="button" data-copy-from="bankCode">複製代碼</button></dd>
+            <dt>分行</dt><dd data-bank="branch">瑞光分行</dd>
+            <dt>帳號</dt><dd><span class="acct" data-bank="account">7165-4022-7006</span><button class="copy js-copy" type="button" data-copy-from="accountDigits">複製帳號</button></dd>
+            <dt>戶名</dt><dd data-bank="name">江凱為</dd>
+          </dl>
+          <div class="bank__warn" role="note"><span class="notice__mark" aria-hidden="true">!</span><p><b>匯款時「備註」請留空，不要填任何文字</b>，才能查詢到匯款帳號後五碼。</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIGNUP -->
+  <section class="band signup" id="signup">
+    <div class="wrap">
+      <div class="band__head">
+        <p class="band__kicker">Sign Up</p>
+        <h2 class="band__title">團報報名表</h2>
+        <p class="band__lead">資料會直接填入大會團體報名表，請與身分證完全一致。一人填一份，幫家人朋友報名請分開填寫。</p>
+      </div>
+
+      <div class="gate" id="gate">
+        <div>
+          <h3 id="gateTitle">先閱讀並同意參賽聲明</h3>
+          <p id="gateText">同意大會參賽聲明及 NID 團報資料說明後，報名表會在這裡打開。</p>
+        </div>
+        <button class="btn btn--sun btn--lg js-open-terms" type="button">閱讀參賽聲明</button>
+      </div>
+
+      <div class="form-layout" id="formArea" hidden>
+        <form class="form" id="signupForm" novalidate>
+          <input class="hp" type="text" id="f-website" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <!-- STEP 1 -->
+          <fieldset class="step" id="step-1">
+            <legend><span class="step__head"><span class="step__no">1</span>報名身分</span></legend>
+            <div class="field" data-field="member">
+              <span class="label" id="lbl-member">你是 NID 當期學員嗎？<span class="req">*</span></span>
+              <div class="choices choices--3" role="radiogroup" aria-labelledby="lbl-member">
+                <label class="choice"><input type="radio" name="member" id="f-member-student" value="student"><span class="choice__body"><b>當期學員</b><small>運費 <span class="num" data-cfg="shipStudent">NT$50</span></small></span></label>
+                <label class="choice"><input type="radio" name="member" id="f-member-child" value="child"><span class="choice__body"><b>當期學員的小孩</b><small>運費 <span class="num" data-cfg="shipChild">NT$50</span>・未滿 18 歲，爸爸或媽媽是當期學員</small></span></label>
+                <label class="choice"><input type="radio" name="member" id="f-member-guest" value="guest"><span class="choice__body"><b>非當期學員</b><small>運費 <span class="num" data-cfg="shipGuest">NT$80</span>・需有當期學員朋友</small></span></label>
+              </div>
+            </div>
+            <div class="field" data-field="className" data-when="member=student" hidden>
+              <label for="f-class">你的班級<span class="req">*</span></label>
+              <select class="select" id="f-class" name="className"></select>
+              <input class="input" type="text" id="f-class-other" name="classOther" placeholder="請填寫班級名稱，例如：週三北田跑步班" hidden>
+              <p class="help">選單是 NID 目前開課的班級；找不到你的班請選「其他」自行填寫。</p>
+            </div>
+            <div data-when="member=guest" hidden>
+              <div class="notice notice--before"><span class="notice__mark" aria-hidden="true">i</span><p>非當期學員要有一位<b>目前是當期學員</b>的朋友，才能參加團報。請填寫這位朋友的姓名和班級。</p></div>
+              <div class="grid-2">
+                <div class="field" data-field="refName">
+                  <label for="f-ref-name">當期學員朋友姓名<span class="req">*</span></label>
+                  <input class="input" type="text" id="f-ref-name" name="refName" autocomplete="off" maxlength="30">
+                </div>
+                <div class="field" data-field="refClass">
+                  <label for="f-ref-class">朋友的班級<span class="req">*</span></label>
+                  <select class="select" id="f-ref-class" name="refClass"></select>
+                  <input class="input" type="text" id="f-ref-class-other" name="refClassOther" placeholder="請填寫朋友的班級" hidden>
+                </div>
+              </div>
+            </div>
+            <div data-when="member=child" hidden>
+              <div class="notice notice--before"><span class="notice__mark" aria-hidden="true">i</span><p>比賽當天<b>未滿 18 歲</b>、爸爸或媽媽是<b>當期學員</b>的小朋友，運費算當期學員的價格。請填爸爸或媽媽的姓名和班級，小編會核對；下面的資料請填小朋友本人的。</p></div>
+              <div class="grid-2">
+                <div class="field" data-field="parentName">
+                  <label for="f-parent-name">爸爸或媽媽的姓名<span class="req">*</span></label>
+                  <input class="input" type="text" id="f-parent-name" name="parentName" autocomplete="off" maxlength="30">
+                </div>
+                <div class="field" data-field="parentClass">
+                  <label for="f-parent-class">爸爸或媽媽的班級<span class="req">*</span></label>
+                  <select class="select" id="f-parent-class" name="parentClass"></select>
+                  <input class="input" type="text" id="f-parent-class-other" name="parentClassOther" placeholder="請填寫爸爸或媽媽的班級" hidden>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- STEP 2 -->
+          <fieldset class="step" id="step-2">
+            <legend><span class="step__head"><span class="step__no">2</span>組別與紀念品</span></legend>
+            <div class="field" data-field="category">
+              <span class="label" id="lbl-cat">報名組別<span class="req">*</span></span>
+              <div class="cat-pick" id="catPick" role="radiogroup" aria-labelledby="lbl-cat"><!-- rendered --></div>
+              <p class="help">年齡依比賽當天（2027/4/18）計算。填好下面的生日後，不符合資格的組別會變灰。</p>
+            </div>
+            <div class="notice notice--before" id="kidNotice" hidden><span class="notice__mark" aria-hidden="true">i</span><p>12 歲（含）以下要有 <b>20 歲以上的大人陪同</b>參加，陪同的大人也要報名（大會嚴禁沒報名的人陪跑）。這份送出後，可以按「再幫一位報名」接著填。</p></div>
+            <div class="field" data-field="gift" id="giftField" hidden>
+              <span class="label" id="lbl-gift">好禮二選一<span class="req">*</span></span>
+              <div class="choices gift-pick" id="giftPick" role="radiogroup" aria-labelledby="lbl-gift"><!-- rendered --></div>
+              <p class="help">只有 21K、10K 有好禮。耳機是大會早鳥限量，送完大會會改送喇叭。</p>
+            </div>
+            <div class="field" data-field="size">
+              <label for="f-size" id="lbl-size">紀念T恤尺寸<span class="req">*</span></label>
+              <select class="select" id="f-size" name="size"></select>
+              <p class="help">紀念T恤是客製化商品，報名後不能更換尺寸，請對照下方大會尺寸表。</p>
+              <figure class="size-ref" id="sizeChart">
+                <div class="size-ref__scroll" tabindex="0" aria-label="大會紀念T恤尺寸表，可左右捲動">
+                  <table class="size-table">
+                    <thead>
+                      <tr><th scope="col">尺寸</th><th scope="col">8</th><th scope="col">10</th><th scope="col">12</th><th scope="col">XS</th><th scope="col">S</th><th scope="col">M</th><th scope="col">L</th><th scope="col">XL</th><th scope="col">2L</th><th scope="col">3L</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><th scope="row">衣長</th><td>46</td><td>52</td><td>58</td><td>60</td><td>62</td><td>66</td><td>70</td><td>73</td><td>76</td><td>78</td></tr>
+                      <tr><th scope="row">胸寬</th><td>36</td><td>38</td><td>42</td><td>44</td><td>45</td><td>48</td><td>51</td><td>54</td><td>57</td><td>61</td></tr>
+                      <tr><th scope="row">袖長</th><td>16</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td></tr>
+                      <tr><th scope="row">建議身高</th><td>110</td><td>120</td><td>130</td><td>140</td><td>150</td><td>160</td><td>170</td><td>180</td><td>180–190</td><td>180–200</td></tr>
+                      <tr><th scope="row">建議體重</th><td>15–25</td><td>20–30</td><td>25–35</td><td>30–40</td><td>40–50</td><td>45–55</td><td>50–70</td><td>60–80</td><td>80–100</td><td>100–120</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <figcaption>大會尺寸表・8、10、12 號為兒童款・衣長／胸寬／袖長單位 cm、身高 cm、體重 kg・誤差 5% 屬正常<span class="size-ref__swipe">・左右滑動看完整尺寸</span></figcaption>
+              </figure>
+            </div>
+          </fieldset>
+
+          <!-- STEP 3 -->
+          <fieldset class="step" id="step-3">
+            <legend><span class="step__head"><span class="step__no">3</span>參賽者資料</span></legend>
+            <p class="step__hint">請與身分證一致，大會會用來投保與核對組別資格。</p>
+            <div class="grid-2">
+              <div class="field" data-field="name">
+                <label for="f-name">姓名<span class="req">*</span></label>
+                <input class="input" type="text" id="f-name" name="name" autocomplete="name" maxlength="40">
+              </div>
+              <div class="field" data-field="gender">
+                <span class="label" id="lbl-gender">性別<span class="req">*</span></span>
+                <div class="choices" role="radiogroup" aria-labelledby="lbl-gender">
+                  <label class="choice choice--inline"><input type="radio" name="gender" id="f-gender-m" value="男"><span class="choice__body"><b>男</b></span></label>
+                  <label class="choice choice--inline"><input type="radio" name="gender" id="f-gender-f" value="女"><span class="choice__body"><b>女</b></span></label>
+                </div>
+              </div>
+            </div>
+            <div class="grid-2">
+              <div class="field" data-field="birth">
+                <span class="label" id="lbl-birth">出生年月日（西元）<span class="req">*</span></span>
+                <div class="dob" role="group" aria-labelledby="lbl-birth">
+                  <select class="select" id="f-birth-y" name="birthY" aria-label="出生年"></select>
+                  <select class="select" id="f-birth-m" name="birthM" aria-label="出生月"></select>
+                  <select class="select" id="f-birth-d" name="birthD" aria-label="出生日"></select>
+                </div>
+              </div>
+              <div class="field" data-field="idno">
+                <label for="f-id" id="lbl-id">身分證字號<span class="req">*</span></label>
+                <input class="input input--upper" type="text" id="f-id" name="idno" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="10" placeholder="A123456789">
+                <p class="help" id="idHelp">外籍人士請填居留證號碼。</p>
+              </div>
+            </div>
+            <div class="grid-2">
+              <div class="field" data-field="phone">
+                <label for="f-phone">行動電話<span class="req">*</span></label>
+                <input class="input" type="tel" id="f-phone" name="phone" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="0912345678">
+              </div>
+              <div class="field" data-field="tel">
+                <label for="f-tel">市話（選填）</label>
+                <input class="input" type="tel" id="f-tel" name="tel" inputmode="tel" maxlength="20" placeholder="0212345678">
+              </div>
+            </div>
+            <div class="field" data-field="email">
+              <label for="f-email">Email<span class="req">*</span></label>
+              <input class="input" type="email" id="f-email" name="email" autocomplete="email" inputmode="email" maxlength="80" placeholder="name@example.com">
+              <p class="help">只用於團報相關聯繫。</p>
+            </div>
+            <div id="guardianBlock" hidden>
+              <div class="notice notice--before"><span class="notice__mark" aria-hidden="true">!</span><p>比賽當天未滿 18 歲，需要家長或監護人同意，並填寫<b>保證人</b>（家長或監護人）的資料。</p></div>
+              <div class="grid-2">
+                <div class="field" data-field="gName">
+                  <label for="f-g-name">保證人姓名<span class="req">*</span></label>
+                  <input class="input" type="text" id="f-g-name" name="gName" maxlength="40">
+                </div>
+                <div class="field" data-field="gId">
+                  <label for="f-g-id">保證人身分證字號<span class="req">*</span></label>
+                  <input class="input input--upper" type="text" id="f-g-id" name="gId" autocapitalize="characters" spellcheck="false" maxlength="10">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- STEP 4 -->
+          <fieldset class="step" id="step-4">
+            <legend><span class="step__head"><span class="step__no">4</span>大會加購（選填）</span></legend>
+            <p class="step__hint">不需要可以直接跳過。</p>
+            <div class="field" data-field="insurance" id="insBox"><!-- rendered --></div>
+            <p class="help">一日旅平險理賠申請時，要提供活動當天的就醫紀錄，以及受傷當下的傷口與場地照片。</p>
+          </fieldset>
+
+          <!-- STEP 5 -->
+          <fieldset class="step" id="step-5">
+            <legend><span class="step__head"><span class="step__no">5</span>匯款與送出</span></legend>
+            <div class="fee-inline" aria-label="費用明細">
+              <ul class="lines" id="sumLinesInline"></ul>
+            </div>
+            <div class="bank-mini">
+              <div class="row"><span>銀行</span><b><span data-bank="bankCode">822</span> <span data-bank="bankName">中國信託商業銀行</span> <span data-bank="branch">瑞光分行</span></b></div>
+              <div class="row"><span>帳號</span><div class="acct-wrap"><b class="acct" data-bank="account">7165-4022-7006</b><button class="copy copy--dark js-copy" type="button" data-copy-from="accountDigits">複製帳號</button></div></div>
+              <div class="row"><span>戶名</span><b data-bank="name">江凱為</b></div>
+              <div class="row"><span>應匯金額</span><b class="num pay-amount" id="payAmount">—</b></div>
+            </div>
+            <div class="notice notice--alert"><span class="notice__mark" aria-hidden="true">!</span><p><b>匯款時「備註」請留空，不要填任何文字</b>，才能查詢到匯款帳號後五碼。</p></div>
+            <div class="grid-2">
+              <div class="field" data-field="last5">
+                <label for="f-last5">你的匯款帳號後五碼<span class="req">*</span></label>
+                <input class="input input--mono" type="text" id="f-last5" name="last5" inputmode="numeric" pattern="[0-9]*" autocomplete="off" placeholder="12345">
+                <p class="help">填「你匯出款項的帳號」最後 5 碼，不是上面的收款帳號。</p>
+              </div>
+              <div class="field" data-field="payDate">
+                <label for="f-paydate">匯款日期<span class="req">*</span></label>
+                <input class="input" type="date" id="f-paydate" name="payDate">
+              </div>
+            </div>
+            <div class="field" data-field="note">
+              <label for="f-note">備註給 NID（選填）</label>
+              <textarea class="input" id="f-note" name="note" rows="2" maxlength="300" placeholder="例如：和家人一起報名"></textarea>
+            </div>
+            <div class="field" data-field="paid">
+              <label class="check" for="f-paid"><input type="checkbox" id="f-paid" name="paid"><span>我已依上方「應匯金額」完成匯款，並確認以上資料與身分證一致。我了解完成報名後<b>不能更換姓名、組別、T恤尺寸，也不能轉讓或退費換人</b>。</span></label>
+            </div>
+          </fieldset>
+
+          <div class="form-error" id="formError" role="alert" hidden></div>
+          <div class="form__actions">
+            <button class="btn btn--sun btn--lg" type="submit" id="submitBtn">檢查資料並送出</button>
+            <p>送出前會再讓你確認一次。</p>
+          </div>
+        </form>
+
+        <aside class="summary" id="summary" aria-live="polite">
+          <h3>費用明細 <span>YOUR FEE</span></h3>
+          <ul class="lines" id="sumLines"></ul>
+          <div class="sum-total"><span>應匯金額</span><b id="sumTotal">—</b></div>
+          <p class="tiny">晶片押金賽後依大會規定歸還晶片退還；晶片損壞不退。</p>
+        </aside>
+      </div>
+
+      <div id="doneArea" hidden></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="band band--alt" id="faq">
+    <div class="wrap">
+      <div class="band__head">
+        <p class="band__kicker">Good to Know</p>
+        <h2 class="band__title">注意事項</h2>
+      </div>
+      <div class="faq">
+        <details class="fold">
+          <summary>報名後可以換組別、尺寸或轉讓嗎？</summary>
+          <div class="fold__body"><p>不行。大會規定完成報名後，不得以任何理由要求更換姓名、參賽項目、衣服尺寸，也不能轉讓報名資格。送出前請再檢查一次。</p></div>
+        </details>
+        <details class="fold">
+          <summary>退費怎麼算？</summary>
+          <div class="fold__body"><p>大會依體育署「路跑活動參與者安全維護及權益保障應注意事項」辦理退費，比例以<a class="js-official" href="https://lohasnet.tw/Sunfar2027/" target="_blank" rel="noopener">大會官網</a>的退費辦法為準。團報要退費，請先找 <span data-cfg="contact">NID 團報窗口</span>，由團隊聯絡人向大會申請。</p></div>
+        </details>
+        <details class="fold">
+          <summary>物資什麼時候拿得到？</summary>
+          <div class="fold__body"><p>大會一律郵寄報到，會在比賽前 1–2 週把整團物資寄給 NID，收到後再通知大家怎麼拿。收到物資就算完成報到，比賽當天不開放現場報到。晶片、號碼布有缺漏，最晚要在比賽前三天反應。</p></div>
+        </details>
+        <details class="fold">
+          <summary>晶片押金什麼時候退？</summary>
+          <div class="fold__body"><p>21K、10K、5K 每人 NT$100，賽後依大會規定歸還晶片即退還；在晶片上打洞、凹折或寫字的不退。5 公里健走組、5 公里健走兒童組沒有晶片，不收押金。</p></div>
+        </details>
+        <details class="fold">
+          <summary>好禮怎麼選？</summary>
+          <div class="fold__body"><p>只有 21K、10K 有好禮二選一：AZOMA Z1 耳夾式藍牙耳機（市價 2,188）或 e-Power BT-300 藍牙喇叭（市價 899）。耳機是大會早鳥限量 6,000 名，送完大會會改送喇叭。</p></div>
+        </details>
+        <details class="fold">
+          <summary>一日旅平險要買嗎？</summary>
+          <div class="fold__body"><p>選填，NT$40，限比賽當天 15–85 歲。保障內容：身故及失能保險金 100 萬、意外實支實付 3 萬。大會本身也會幫每位選手投保公共意外險。</p></div>
+        </details>
+        <details class="fold">
+          <summary>年齡限制</summary>
+          <div class="fold__body"><p>21K 比賽當天須滿 16 歲；5 公里健走組 8 歲（含）以上；5 公里健走兒童組未滿 8 歲；10K、5K 不限年齡。12 歲（含）以下要有 20 歲以上的大人陪同，陪同的大人也要報名。比賽當天未滿 18 歲要填保證人（家長或監護人）。</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__grid">
+    <div>
+      <img src="assets/img/nid-logo.png" alt="NID RUN CLUB" width="419" height="240">
+      <p class="footer__motto" aria-label="Need, Insist, Different"><span><b>N</b>eed</span><span><b>I</b>nsist</span><span><b>D</b>ifferent</span></p>
+    </div>
+    <div>
+      <p>本頁為 NID RUN CLUB 團體報名收件頁，不是大會官方報名網站。賽事資訊以大會公告為準。</p>
+      <p class="footer__links"><a class="js-official" href="https://lohasnet.tw/Sunfar2027/" target="_blank" rel="noopener">大會官網（樂活報名網）</a><a href="https://www.nidstudio.online" target="_blank" rel="noopener">NID 官網</a><span>團報窗口：<span data-cfg="contact">請洽各班教練</span></span></p>
+    </div>
+  </div>
+</footer>
+
+<!-- TOTAL BAR (phones) -->
+<div class="totalbar" id="totalBar" aria-hidden="true">
+  <div><span id="tbLabel">應匯金額</span><b id="tbTotal">—</b></div>
+  <a class="btn btn--sun btn--sm" href="#step-5">去匯款・送出</a>
+</div>
+
+<!-- TERMS MODAL -->
+<div class="modal" id="termsModal" role="dialog" aria-modal="true" aria-labelledby="termsTitle" hidden>
+  <div class="modal__scrim" data-close></div>
+  <div class="modal__box">
+    <div class="modal__head">
+      <div>
+        <h2 id="termsTitle">參賽聲明</h2>
+        <p>大會團體報名表的參賽聲明與 NID 團報資料說明</p>
+      </div>
+      <button class="modal__x" type="button" data-close aria-label="關閉">×</button>
+    </div>
+    <div class="modal__body" id="termsBody" tabindex="0">
+      <div class="terms">
+        <p class="src">以下是大會團體報名表上的參賽聲明，完整競賽規程以<a class="js-official" href="https://lohasnet.tw/Sunfar2027/" target="_blank" rel="noopener">大會官網</a>為準。報名即視為同意大會競賽規程的所有規定。</p>
+
+        <section>
+          <h3>大會參賽聲明 <small>2027 RUN FOR FUTURE</small></h3>
+          <ul>
+            <li>本人已詳細閱讀過本活動之競賽規程，且同意並保證遵守大會於競賽規程中所約定之事項。</li>
+            <li>保證本人身心健康，亦了解馬拉松／路跑比賽所需承受之風險，自願參加比賽方開始報名。競賽中若發生任何意外事件，本人及家屬願意承擔比賽期間所發生之個人意外風險責任，亦同意對於非主辦方所造成的傷害、死亡或其他任何形式的損失放棄提出任何形式的賠償索求，一切責任與主辦單位無關。</li>
+            <li>明白此項比賽的錄影、相片、姓名、號碼布號碼及成績於世界各地播放或展出與販售及登出於本會網站上；同意主辦或被主辦單位授權之單位得蒐集、處理及利用本人所提供之個人資料，及寄送相關路跑活動訊息或使用本人肖像及成績於宣傳活動上。</li>
+            <li>同意獨家授權主辦單位及主辦單位指定之人，得於本次活動期間拍攝本人之影音、照片，並得於辦理本次活動目的範圍內，蒐集、處理、利用個人資料保護法所列之所有本人個人資料；亦同意獨家授權主辦單位及主辦單位指定之人，得公開、利用、販售本次活動期間本人之影音、照片。非經本人同意者（非上述授權之對象），禁止於本次活動期間拍攝本人之影音、照片後，用以販售或從事任何商業行為。</li>
+            <li>保證提供有效的身份證和資料用於核實本人身份，對以上論述予以確認並願意承擔相應的法律責任。一經報名後，將不得以任何理由質疑競賽內容所列之事項。</li>
+            <li>如曾經有不明原因的胸部不適（胸痛、胸悶）、不明原因的呼吸困難，或家族心臟病、糖尿病史等，皆屬心肌梗塞高危險群，建議慎重考慮自身安全，勿勉強參賽，或請醫師評估參賽風險及先接受心電圖檢測，並自行加保個人人身意外保險。</li>
+            <li>報名時請確認具有能力在限時內完賽。已完成報名手續者，不得以任何理由要求更換人名、參賽項目、衣服尺寸或退費，亦不得因無法參賽轉讓該報名資格。</li>
+            <li>無完成報名者將不具參賽資格，嚴禁陪跑。</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>NID 團報資料說明 <small>NID RUN CLUB</small></h3>
+          <ul>
+            <li>你在本表填寫的資料，NID 只用於本次順發x港都公益路跑團體報名：填入大會團體報名表、匯款對帳、物資發送與賽事相關聯繫。</li>
+            <li>資料會提供給大會主辦、承辦單位與樂活報名網，用於報名、保險與成績作業。</li>
+            <li>需要查詢、更正或刪除資料，請洽 <span data-cfg="contact">NID 團報窗口</span>。</li>
+          </ul>
+        </section>
+        <p class="terms__end" id="termsEnd">已閱讀到最後</p>
+      </div>
+    </div>
+    <div class="modal__foot">
+      <div class="row">
+        <button class="btn btn--line" type="button" id="btnDisagree">不同意</button>
+        <button class="btn btn--sun" type="button" id="btnAgree" disabled>同意，開始報名</button>
+      </div>
+      <p class="hint" id="agreeHint">請先閱讀到最下方，「同意」按鈕就會亮起。</p>
+    </div>
+  </div>
+</div>
+
+<!-- REVIEW MODAL -->
+<div class="modal" id="reviewModal" role="dialog" aria-modal="true" aria-labelledby="reviewTitle" hidden>
+  <div class="modal__scrim" data-close></div>
+  <div class="modal__box">
+    <div class="modal__head">
+      <div>
+        <h2 id="reviewTitle">確認報名資料</h2>
+        <p>送出後不能更換姓名、組別、T恤尺寸，請仔細核對。</p>
+      </div>
+      <button class="modal__x" type="button" data-close aria-label="關閉">×</button>
+    </div>
+    <div class="modal__body"><div class="review" id="reviewBody"></div></div>
+    <div class="modal__foot">
+      <div class="row">
+        <button class="btn btn--line" type="button" data-close>返回修改</button>
+        <button class="btn btn--sun" type="button" id="btnConfirm">確認送出</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DONE MODAL：報名完成，請學員截圖並傳給官方 LINE 小編（點外面不會關，避免還沒截圖就關掉） -->
+<div class="modal modal--done" id="doneModal" role="dialog" aria-modal="true" aria-labelledby="doneModalTitle" hidden>
+  <div class="modal__scrim"></div>
+  <div class="modal__box">
+    <div class="modal__body shot" id="doneShot"></div>
+    <div class="modal__foot">
+      <div class="row">
+        <button class="btn btn--line" type="button" data-close>我截好了</button>
+        <a class="btn btn--lineapp" id="doneLineBtn" target="_blank" rel="noopener" hidden>傳給官方 LINE 小編</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="testbar" id="testBar" hidden>測試模式：開放前測試用，送出的資料會標示【測試】，正式開放前請在試算表刪除。</div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/app.js"></script>
+<!-- ARTIFACT:BODY-END -->
+</body>
+</html>
