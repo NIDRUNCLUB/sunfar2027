@@ -210,7 +210,7 @@
       <div class="band__head">
         <p class="band__kicker"><span class="dock" aria-hidden="true">C1</span>Perks</p>
         <h2 class="band__title">報名好禮＋團報福利</h2>
-        <p class="band__lead">21K、10K 報名就送大會<b>好禮二選一</b>；NID 團報<b>每滿 50 人就多 1 頂帳篷</b>，滿 50 人還會在帳篷區準備團報福利。揪班上同學一起報，人越多越熱鬧！</p>
+        <p class="band__lead">21K、10K 報名就送大會<b>好禮二選一</b>；NID 團報<b>滿 50 人有 1 頂帳篷、滿 100 人 2 頂</b>（最多 2 頂），滿 50 人還會在帳篷區準備團報福利。揪班上同學一起報，人越多越熱鬧！</p>
       </div>
 
       <div class="perks">
@@ -248,7 +248,7 @@
             <ol class="meter__marks" id="tmMarks"><!-- rendered --></ol>
           </div>
           <ul class="perk-list">
-            <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M5 41 24 12l19 29"/><path d="M3 41h42"/><path d="M24 25l-5.5 16"/><path d="M24 25l5.5 16"/><path d="M24 12V4l8 3.5-8 3.5"/></svg><div><b>NID 帳篷休息區</b><span>每滿 50 人就有 1 頂帳篷（大會團體休息區），比賽當天的 NID 基地。</span></div></li>
+            <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M5 41 24 12l19 29"/><path d="M3 41h42"/><path d="M24 25l-5.5 16"/><path d="M24 25l5.5 16"/><path d="M24 12V4l8 3.5-8 3.5"/></svg><div><b>NID 帳篷休息區</b><span>滿 50 人 1 頂、滿 100 人 2 頂帳篷（最多 2 頂，大會團體休息區），比賽當天的 NID 基地。</span></div></li>
             <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M16 26V11a3 3 0 0 1 6 0v12"/><path d="M22 21V8a3 3 0 0 1 6 0v13"/><path d="M28 22V11a3 3 0 0 1 6 0v15a14 14 0 0 1-14 14h-1a12 12 0 0 1-10.4-6L6 27.5a3 3 0 0 1 5.2-3l3.8 5.5"/></svg><div><b>賽後按摩<em>規劃中</em></b><span>滿 50 人，帳篷區規劃安排按摩，讓跑完的腿放鬆一下。</span></div></li>
             <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M20 4h8v6l3 5v26a3 3 0 0 1-3 3h-8a3 3 0 0 1-3-3V15l3-5Z"/><path d="M17 24h14"/><path d="M17 32h14"/></svg><div><b>團報補給品<em>規劃中</em></b><span>滿 50 人，帳篷區規劃準備補給，跑前跑後都有得吃喝。</span></div></li>
           </ul>
@@ -405,7 +405,7 @@
             <li><b>10 公里組、5 公里組</b>：不限年齡。</li>
             <li><b>5 公里健走組</b>：8 歲（含）以上；<b>5 公里健走兒童組</b>：未滿 8 歲。</li>
             <li><b>12 歲（含）以下</b>要有 20 歲以上的大人陪同參加；陪同的大人也要報名，大會嚴禁沒報名的人陪跑。</li>
-            <li>比賽當天<b>未滿 18 歲</b>：要填保證人（家長或監護人）的姓名與身分證字號。</li>
+            <li>每個人都要填<b>緊急聯絡人</b>和電話；比賽當天未滿 18 歲，請填家長或監護人。</li>
           </ul>
         </article>
         <article class="info-card">
@@ -698,17 +698,15 @@
               <input class="input" type="email" id="f-email" name="email" autocomplete="email" inputmode="email" maxlength="80" placeholder="name@example.com">
               <p class="help">只用於團報相關聯繫。</p>
             </div>
-            <div id="guardianBlock" hidden>
-              <div class="notice notice--before"><span class="notice__mark" aria-hidden="true">!</span><p>比賽當天未滿 18 歲，需要家長或監護人同意，並填寫<b>保證人</b>（家長或監護人）的資料。</p></div>
-              <div class="grid-2">
-                <div class="field" data-field="gName">
-                  <label for="f-g-name">保證人姓名<span class="req">*</span></label>
-                  <input class="input" type="text" id="f-g-name" name="gName" maxlength="40">
-                </div>
-                <div class="field" data-field="gId">
-                  <label for="f-g-id">保證人身分證字號<span class="req">*</span></label>
-                  <input class="input input--upper" type="text" id="f-g-id" name="gId" autocapitalize="characters" spellcheck="false" maxlength="10">
-                </div>
+            <div class="grid-2">
+              <div class="field" data-field="ecName">
+                <label for="f-ec-name">緊急聯絡人<span class="req">*</span></label>
+                <input class="input" type="text" id="f-ec-name" name="ecName" maxlength="40" placeholder="王大明">
+                <p class="help" id="ecHelp">比賽當天找得到的家人或朋友，不能填自己。</p>
+              </div>
+              <div class="field" data-field="ecPhone">
+                <label for="f-ec-phone">緊急聯絡人電話<span class="req">*</span></label>
+                <input class="input" type="tel" id="f-ec-phone" name="ecPhone" inputmode="tel" maxlength="20" placeholder="0912345678">
               </div>
             </div>
           </fieldset>
@@ -807,7 +805,7 @@
         </details>
         <details class="fold">
           <summary>年齡限制</summary>
-          <div class="fold__body"><p>21K 比賽當天須滿 16 歲；5 公里健走組 8 歲（含）以上；5 公里健走兒童組未滿 8 歲；10K、5K 不限年齡。12 歲（含）以下要有 20 歲以上的大人陪同，陪同的大人也要報名。比賽當天未滿 18 歲要填保證人（家長或監護人）。</p></div>
+          <div class="fold__body"><p>21K 比賽當天須滿 16 歲；5 公里健走組 8 歲（含）以上；5 公里健走兒童組未滿 8 歲；10K、5K 不限年齡。12 歲（含）以下要有 20 歲以上的大人陪同，陪同的大人也要報名。每個人都要填緊急聯絡人和電話，未滿 18 歲請填家長或監護人。</p></div>
         </details>
       </div>
     </div>
@@ -924,8 +922,8 @@
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <div class="testbar" id="testBar" hidden>測試模式：開放前測試用，送出的資料會標示【測試】，正式開放前請在試算表刪除。</div>
 
-<script src="assets/js/config.js"></script>
-<script src="assets/js/app.js?v=1121"></script>
+<script src="assets/js/config.js?v=1121b"></script>
+<script src="assets/js/app.js?v=1121b"></script>
 <!-- ARTIFACT:BODY-END -->
 </body>
 </html>
