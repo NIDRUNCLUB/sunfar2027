@@ -333,7 +333,7 @@
     $('#f-class-other').hidden = val('f-class') !== OTHER;
     $('#f-ref-class-other').hidden = val('f-ref-class') !== OTHER;
     $('#f-parent-class-other').hidden = val('f-parent-class') !== OTHER;
-    $('#guardianBlock').hidden = !isMinor();
+    $('#ecHelp').textContent = isMinor() ? '比賽當天未滿 18 歲，請填家長或監護人。' : '比賽當天找得到的家人或朋友，不能填自己。';
 
     // 組別年齡資格（比賽當天）：生日填好後，不符合的組別鎖起來
     var b = birthParts();
@@ -460,8 +460,8 @@
       tel: cleanPhone(val('f-tel')),
       email: val('f-email'),
       minor: isMinor(),
-      gName: isMinor() ? val('f-g-name') : '',
-      gId: isMinor() ? val('f-g-id').toUpperCase().replace(/\s/g, '') : '',
+      ecName: val('f-ec-name'),
+      ecPhone: cleanPhone(val('f-ec-phone')),
       insurance: insuranceOn() && !!$('#f-ins') && $('#f-ins').checked && insuranceEligible(),
       last5: val('f-last5'),
       payDate: val('f-paydate'),
@@ -513,13 +513,11 @@
     if (v.tel && !/^0\d{6,10}(#\d{1,6})?$/.test(v.tel)) e.tel = '市話請填區碼＋號碼，例如 0212345678（沒有可以空白）';
     if (!v.email) e.email = '請填寫 Email';
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.email)) e.email = 'Email 格式不正確';
-    if (v.minor) {
-      if (!v.gName) e.gName = '請填寫保證人（家長或監護人）姓名';
-      else if (v.gName === v.name) e.gName = '保證人要填家長或監護人，不是報名者本人';
-      if (!v.gId) e.gId = '請填寫保證人的身分證字號';
-      else if (!twIdValid(v.gId)) e.gId = '保證人身分證字號格式或檢查碼不正確';
-      else if (v.gId === v.idno) e.gId = '保證人身分證字號不能和報名者相同';
-    }
+    if (!v.ecName) e.ecName = v.minor ? '請填寫緊急聯絡人（家長或監護人）' : '請填寫緊急聯絡人';
+    else if (v.ecName === v.name) e.ecName = '緊急聯絡人不能填自己';
+    if (!v.ecPhone) e.ecPhone = '請填寫緊急聯絡人電話';
+    else if (!/^0\d{7,9}(#\d{1,6})?$/.test(v.ecPhone)) e.ecPhone = '請填手機 09 開頭 10 碼，或市話區碼＋號碼';
+    else if (v.phone && v.ecPhone === v.phone) e.ecPhone = '不能和你自己的手機相同';
     if (!v.last5) e.last5 = '請填寫匯款帳號後五碼';
     else if (!/^\d{5}$/.test(v.last5)) e.last5 = '後五碼是 5 個數字';
     else if (v.last5 === RECEIVE_LAST5) e.last5 = RECEIVE_LAST5 + ' 是 NID 收款帳號的後五碼，請填「你自己匯出帳號」的後五碼';
@@ -637,7 +635,7 @@
     rows.push(['身分證字號', v.idno]);
     rows.push(['行動電話', v.phone + (v.tel ? '・市話 ' + v.tel : '')]);
     rows.push(['Email', v.email]);
-    if (v.minor) rows.push(['保證人', v.gName + '・' + v.gId]);
+    rows.push(['緊急聯絡人', v.ecName + '・' + v.ecPhone]);
     if (insuranceOn()) rows.push(['加購', v.insurance ? C.insurance.name : '無']);
     rows.push(['匯款後五碼', v.last5 + '・' + v.payDate]);
     if (v.note) rows.push(['備註', v.note]);
@@ -956,17 +954,18 @@
 
   /* ---------- 團報進度：每滿 50 人 1 頂帳篷（人數來自收件程式，只有總數） */
   var TENT_EVERY = (C.team && C.team.tentEvery) || 50;
+  var MAX_TENTS = (C.team && C.team.maxTents) || 2;   // 帳篷最多幾頂
   var TENT_SVG = '<svg viewBox="0 0 48 48" aria-hidden="true"><path d=\"M5 41 24 12l19 29\"/><path d=\"M3 41h42\"/><path d=\"M24 25l-5.5 16\"/><path d=\"M24 25l5.5 16\"/><path d=\"M24 12V4l8 3.5-8 3.5\"/></svg>';
   function renderMeter(total) {
     var countEl = $('#tmCount');
     if (!countEl) return;
     var known = typeof total === 'number' && total >= 0;
     var n = known ? total : 0;
-    var tents = Math.floor(n / TENT_EVERY);
-    var max = Math.max(2, tents + 1) * TENT_EVERY;
+    var tents = Math.min(MAX_TENTS, Math.floor(n / TENT_EVERY));
+    var max = MAX_TENTS * TENT_EVERY;
     var scale = max * 1.12;   // 進度條比最後一個里程碑長一點，標籤才不會被切到
     countEl.textContent = known ? String(n) : '—';
-    $('#tmFill').style.width = Math.min(100, (n / scale) * 100) + '%';
+    $('#tmFill').style.width = (n >= max ? 100 : Math.min(100, (n / scale) * 100)) + '%';   // 兩頂都解鎖就整條填滿
     var marks = '';
     for (var m = TENT_EVERY; m <= max; m += TENT_EVERY) {
       var k = m / TENT_EVERY;
@@ -977,7 +976,8 @@
     var msg;
     if (!known) msg = '滿 ' + TENT_EVERY + ' 人解鎖 NID 帳篷＋團報福利！報名開放後人數會即時更新。';
     else if (tents === 0) msg = '再 ' + (TENT_EVERY - n) + ' 人，就解鎖 NID 帳篷＋團報福利！';
-    else msg = '已解鎖 ' + tents + ' 頂帳篷！再 ' + ((tents + 1) * TENT_EVERY - n) + ' 人就有第 ' + (tents + 1) + ' 頂。';
+    else if (tents < MAX_TENTS) msg = '已解鎖 ' + tents + ' 頂帳篷！再 ' + ((tents + 1) * TENT_EVERY - n) + ' 人就有第 ' + (tents + 1) + ' 頂（最多 ' + MAX_TENTS + ' 頂）。';
+    else msg = MAX_TENTS + ' 頂帳篷全部解鎖！帳篷最多 ' + MAX_TENTS + ' 頂，人再多也歡迎一起來。';
     $('#tmMsg').textContent = msg;
     $('#teamMeter').classList.toggle('is-unlocked', tents > 0);
   }
@@ -1034,7 +1034,7 @@
     form.addEventListener('input', function (e) {
       var t = e.target;
       if (t.id === 'f-last5') t.value = t.value.replace(/\D/g, '').slice(0, 5);
-      if (t.id === 'f-id' || t.id === 'f-g-id') {
+      if (t.id === 'f-id') {
         var pos = t.selectionStart;
         t.value = t.value.toUpperCase().replace(/\s/g, '');
         try { t.setSelectionRange(pos, pos); } catch (err) { /* some inputs refuse */ }

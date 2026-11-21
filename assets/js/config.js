@@ -63,8 +63,8 @@ window.RACE_CONFIG = {
   /* 紀念T恤尺寸（大會團報表填「紀念T恤(尺寸)」）。8、10、12 是兒童款。 */
   sizes: ['8', '10', '12', 'XS', 'S', 'M', 'L', 'XL', '2L', '3L'],
 
-  /* 團報帳篷：每滿 tentEvery 人 1 頂帳篷；滿第一頂才有帳篷區的團報福利（首頁「團報進度」用） */
-  team: { tentEvery: 50 },
+  /* 團報帳篷：每滿 tentEvery 人 1 頂帳篷，最多 maxTents 頂；滿第一頂才有帳篷區的團報福利（首頁「團報進度」用） */
+  team: { tentEvery: 50, maxTents: 2 },
 
   /* 大會加購：一日旅平險（比賽當天 15–85 歲才能買）。enabled 改成 false 就不開放。 */
   insurance: { enabled: true, name: '一日旅平險', price: 40, minAge: 15, maxAge: 85,
