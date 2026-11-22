@@ -970,12 +970,12 @@
     for (var m = TENT_EVERY; m <= max; m += TENT_EVERY) {
       var k = m / TENT_EVERY;
       marks += '<li class="' + (n >= m ? 'is-done' : '') + '" style="left:' + ((m / scale) * 100) + '%">' +
-        '<span class="meter__tent">' + TENT_SVG + '</span><b>' + m + ' 人</b><small>' + (k === 1 ? '帳篷＋福利' : '第 ' + k + ' 頂帳篷') + '</small></li>';
+        '<span class="meter__tent">' + TENT_SVG + '</span><b>' + m + ' 人</b><small>' + (k === 1 ? 'NID 帳篷' : '第 ' + k + ' 頂帳篷') + '</small></li>';
     }
     $('#tmMarks').innerHTML = marks;
     var msg;
-    if (!known) msg = '滿 ' + TENT_EVERY + ' 人解鎖 NID 帳篷＋團報福利！報名開放後人數會即時更新。';
-    else if (tents === 0) msg = '再 ' + (TENT_EVERY - n) + ' 人，就解鎖 NID 帳篷＋團報福利！';
+    if (!known) msg = '滿 ' + TENT_EVERY + ' 人解鎖 NID 帳篷！報名開放後人數會即時更新。';
+    else if (tents === 0) msg = '再 ' + (TENT_EVERY - n) + ' 人，就解鎖 NID 帳篷！';
     else if (tents < MAX_TENTS) msg = '已解鎖 ' + tents + ' 頂帳篷！再 ' + ((tents + 1) * TENT_EVERY - n) + ' 人就有第 ' + (tents + 1) + ' 頂（最多 ' + MAX_TENTS + ' 頂）。';
     else msg = MAX_TENTS + ' 頂帳篷全部解鎖！帳篷最多 ' + MAX_TENTS + ' 頂，人再多也歡迎一起來。';
     $('#tmMsg').textContent = msg;
