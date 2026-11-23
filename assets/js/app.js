@@ -150,7 +150,7 @@
       if (!b.hasAttribute('data-label')) b.setAttribute('data-label', b.innerHTML);
       var small = b.classList.contains('btn--sm');
       b.disabled = ph !== 'open';
-      if (ph === 'before') b.textContent = fmtShort(OPEN_AT) + (small ? ' 開放' : ' 00:00 開放報名');
+      if (ph === 'before') b.textContent = fmtShort(OPEN_AT) + (small ? ' 開放' : ' ' + twParts(OPEN_AT).hh + ':' + twParts(OPEN_AT).mi + ' 開放報名');
       else if (ph === 'closed') b.textContent = small ? '已截止' : '團報已截止';
       else b.innerHTML = b.getAttribute('data-label');
     });
